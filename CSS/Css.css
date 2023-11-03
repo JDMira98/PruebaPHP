@@ -1,0 +1,75 @@
+
+/* Aquí puedes definir tus colores personalizados */
+:root {
+    --color-fondo: #f8f9fa;
+    --color-texto: #000000;
+    --color-navbar-fondo: #eef0f2;
+    --color-navbar-texto: #000000;
+
+    /* Escala Colores */
+        --C1: #001489;
+        --C2: #005EB8;
+        --C3: #7EB5E7;
+        --C4: #FFD700;
+        /* Escala degradada azúl. */
+        --A3: #005EB8;
+        --A4: #005EB8;
+        --A5: #006EB5;
+        --A2: #539AC2;
+        --A6: #0083C7;
+        --A1: #8EBCDC;
+}
+
+/* Estilos personalizados para el encabezado */
+header {
+    
+    background: linear-gradient(to left, var(--A6)    , var(--A2), var(--A1));
+    color: var(--color-navbar-texto);
+    
+}
+
+.navbarm{
+        display: flex;
+        align-items: end;
+        align-content: end;
+        justify-content: end;
+        margin-bottom: 50px;
+}
+.navA{
+   color: #000000;
+   font-size: 18px;
+   margin: 30px;
+   text-decoration: solid;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+  .logo {
+    display: flex;
+      float: inline-start;
+      padding: 14px 20px;
+            align-items: start;
+                align-content: start;
+                justify-content: start;
+                margin-right: auto;
+  }
+
+  .logo img {
+      height: 70px;
+      /* Ajusta el tamaño de la imagen según sea necesario */
+  }
+
+  .body{
+    background-color: var(--color-navbar-fondo);
+  }
+
+  .logo2 {
+      display: flex;
+      margin-right: auto;
+      height: 50px;
+      width: 50px;
+      margin-bottom: 50px;
+  }
+
+
+
+
