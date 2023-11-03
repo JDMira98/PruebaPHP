@@ -32,54 +32,68 @@
     <div  class="container">
         <h2>Solicitud Rápida</h2>
         <p style="margin-bottom: 50px; "class="text-muted">Llena tu pre-solicitud ahora!</p>
-        <form  class="col-md-10" action="./Controller/formController.php" method="post">
-            <div style="padding: 20px;
-    border-top: 3px solid #ddd;" class="col-md-8">
-                <label for="dropdown">Selecciona un servicio:</label>
-                <select class="form-control" name="servicio">
-                    <option>Planes Médicos</option>
-                    <option>Plan Dental</option>
-                    <option>Pólizas de Cáncer</option>
-                    <option>Seguros de Vida</option>
-                    <option>Planes Advantage</option>
-                </select>
-            </div>
-            <div class="col-md-12">
-            <div class="row">
-
-             <div class="col-md-4">
+        <form class="col-md-10" action="./Controller/formController.php" method="post" onsubmit="return validateForm()">
+    <div style="padding: 20px; border-top: 3px solid #ddd;" class="col-md-8">
+        <label for="dropdown">Selecciona un servicio:</label>
+        <select class="form-control" name="servicio" required>
+            <option>Planes Médicos</option>
+            <option>Plan Dental</option>
+            <option>Pólizas de Cáncer</option>
+            <option>Seguros de Vida</option>
+            <option>Planes Advantage</option>
+        </select>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre">
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
             </div>
             <div class="col-md-4">
                 <label for="apellido">Apellido:</label>
-                <input type="text" class="form-control" name="apellido">
+                <input type="text" class="form-control" name="apellido" required>
             </div>
-            </div>
-            </div>
-           
-            <div class="col-md-8">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" class="form-control" name="email">
-            </div>
-            <div class="col-md-8">
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" class="form-control" name="telefono">
-            </div>
-            <div style="padding: 20px;  border-bottom: 3px solid #ddd;" class="col-md-8" >
-                <label for="mensaje">Mensaje:</label>
-                <textarea class="form-control" rows="5" name="mensaje"></textarea>
+        </div>
+    </div>
 
-                <div  style="margin-top: 20px; "  class="text-center">
-                <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
-            </div>
-            </div>
-    </form>
+    <div class="col-md-8">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" class="form-control" name="email" required>
+    </div>
+    <div class="col-md-8">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" class="form-control" name="telefono" required>
+    </div>
+    <div style="padding: 20px; border-bottom: 3px solid #ddd;" class="col-md-8">
+        <label for="mensaje">Mensaje:</label>
+        <textarea class="form-control" rows="5" name="mensaje" required></textarea>
+
+        <div style="margin-top: 20px;" class="text-center">
+            <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+        </div>
+    </div>
+</form>
     </div>
 
     <!-- Agregar enlaces a los scripts de Bootstrap y jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+    function validateForm() {
+        var nombre = document.forms[0]["nombre"].value;
+        var apellido = document.forms[0]["apellido"].value;
+        var email = document.forms[0]["email"].value;
+        var telefono = document.forms[0]["telefono"].value;
+
+        if (nombre === "" || apellido === "" || email === "" || telefono === "") {
+            alert("Todos los campos son obligatorios");
+            return false;
+        }
+
+        return true;
+    }
+</script>
 
 
         <footer>
